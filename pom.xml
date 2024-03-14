@@ -47,7 +47,15 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        assertj-->
+        <!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-junit5 -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-junit5</artifactId>
+            <version>3.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--        assertj-->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
