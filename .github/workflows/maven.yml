@@ -28,18 +28,11 @@ jobs:
 #        run: mvn -B test --file pom.xml
       - name: Run the Maven verify phase
         run: mvn --batch-mode --update-snapshots verify
-#      - name: Maven Package
-#        run: mvn -B clean package -DskipTests
-#      - name: Maven Verify
-#        run: mvn -B clean verify
-      # - name: Test
-      #   run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-
-      # - name: Report
-      #   uses: dorny/test-reporter@v1
-      #   if: always()
-      #   with:
-      #     name: Maven Tests
-      #     path: target/surefire-reports/*.xml
-      #     reporter: java-junit
-      #     fail-on-error: true
+      - name: 리포트 작성
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Maven Tests
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+          fail-on-error: true
